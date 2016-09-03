@@ -71,8 +71,18 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+# Recovery (TWRP)
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.twrp
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+DEVICE_RESOLUTION := 1440x2560
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_VARIANT := twrp
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FB2PNG := true
+TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
